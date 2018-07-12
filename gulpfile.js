@@ -8,15 +8,21 @@ var gulp 			= require('gulp'),
 	rigger 			= require('gulp-rigger'),
 	del				= require('del'),
 	imagemin    	= require('gulp-imagemin'), 
-    pngquant    	= require('imagemin-pngquant'); 
-    cache      	    = require('gulp-cache'); 
+    pngquant    	= require('imagemin-pngquant'),
+    cache      	    = require('gulp-cache'),
+    autoprefixer 	= require('gulp-autoprefixer');
+
 
 
 
 // SASS into CSS
 gulp.task('sass', function() { 
   return gulp.src('app/sass/**/*.sass') 
-        	.pipe(sass()) 
+        	.pipe(sass())
+        	.pipe(autoprefixer({
+            browsers: ['last 10 versions'],
+            cascade: false
+        	}))
         	.pipe(gulp.dest('app/css'))
         	.pipe(browserSync.reload({stream: true}))
         	

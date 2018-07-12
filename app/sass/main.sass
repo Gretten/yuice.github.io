@@ -1,5 +1,51 @@
+* 
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+
+
 header
+	position: relative
 	min-height: 400px
 	background: url(https://images.pexels.com/photos/219794/pexels-photo-219794.jpeg) no-repeat 
 	background-size: cover
-	
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+
+
+span
+	opacity: 0
+nav
+	list-style: none
+	li
+		display: inline-block
+		margin-right: 1px
+		a
+			display: block
+			padding: 5px 55px
+			font-size: 16px
+			font-weight: bold
+			color: white
+
+@media screen and (max-width: 1200px)
+	nav
+		li
+			a
+				padding: 5px 20px
+
+@media screen and ( max-width: 765px )
+	nav
+		display: none
+	.glyphicon
+		position: absolute
+		top: 15px
+		left: 10px
+		margin: 0
+		display: block
+		color: white
+		font-size: 30px
+		opacity: 1
